@@ -13,13 +13,14 @@ app.use(cors({
     // Allow requests with no origin (like mobile apps or curl requests)
     if (!origin) return callback(null, true);
     
-    const allowedOrigins = [
-      'http://localhost:3000',
-      'http://localhost:3001',
-      'https://your-frontend-url.vercel.app',
-      'https://your-frontend-url.netlify.app',
-      // Add your actual frontend URLs here when you deploy
-    ];
+    // UPDATED CODE for server.js:
+   const allowedOrigins = [
+    'http://localhost:3000',
+    'http://localhost:3001',
+    'https://moodcode-frontend-h267tonx4-definitelyavis-projects.vercel.app', // ← Your new URL
+    'https://moodcode-frontend-dynq.vercel.app', // Keep the old one too
+    'https://moodcode-frontend-dyurmqs0j-definitelyavis-projects.vercel.app', // Keep this one
+  ];
     
     if (allowedOrigins.indexOf(origin) !== -1) {
       callback(null, true);
