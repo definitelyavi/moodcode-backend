@@ -17,9 +17,8 @@ app.use(cors({
    const allowedOrigins = [
     'http://localhost:3000',
     'http://localhost:3001',
-    'https://moodcode-frontend-h267tonx4-definitelyavis-projects.vercel.app', // ← Your new URL
-    'https://moodcode-frontend-dynq.vercel.app', // Keep the old one too
-    'https://moodcode-frontend-dyurmqs0j-definitelyavis-projects.vercel.app', // Keep this one
+    'https://moodcode-frontend.vercel.app',
+    'https://moodcode-frontend-h267tonx4-definitelyavis-projects.vercel.app',
   ];
     
     if (allowedOrigins.indexOf(origin) !== -1) {
