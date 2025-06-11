@@ -7,12 +7,30 @@ const crypto = require('crypto');
 const app = express();
 const PORT = process.env.PORT || 3001;
 
+// Fixed CORS configuration to handle both development and production
 app.use(cors({
-  origin: process.env.NODE_ENV === 'production' 
-    ? 'https://your-frontend-url.vercel.app' 
-    : 'http://localhost:3000',
+  origin: function (origin, callback) {
+    // Allow requests with no origin (like mobile apps or curl requests)
+    if (!origin) return callback(null, true);
+    
+    const allowedOrigins = [
+      'http://localhost:3000',
+      'http://localhost:3001',
+      'https://your-frontend-url.vercel.app',
+      'https://your-frontend-url.netlify.app',
+      // Add your actual frontend URLs here when you deploy
+    ];
+    
+    if (allowedOrigins.indexOf(origin) !== -1) {
+      callback(null, true);
+    } else {
+      console.log(`CORS: Blocked origin ${origin}`);
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
   credentials: true
 }));
+
 app.use(express.json());
 
 const SOUNDCLOUD_CLIENT_ID = process.env.SOUNDCLOUD_CLIENT_ID;
