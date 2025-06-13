@@ -84,16 +84,7 @@ This backend service powers the MoodCode application by providing secure authent
    ```bash
    npm start
    ```
-
-## Environment Variables
-
-| Variable | Description | Required |
-|----------|-------------|----------|
-| `PORT` | Server port (default: 3001) | No |
-| `SOUNDCLOUD_CLIENT_ID` | SoundCloud application client ID | Yes |
-| `SOUNDCLOUD_CLIENT_SECRET` | SoundCloud application secret | Yes |
-| `SOUNDCLOUD_REDIRECT_URI` | OAuth callback URL | Yes |
-
+   
 ## Mood Detection & Music Matching
 
 ### Supported Moods
