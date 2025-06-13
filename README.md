@@ -51,7 +51,7 @@ Requires SoundCloud API credentials in environment variables. See `.env.example`
 
 ## Author
 
-**Avi** [@definitelyavi](https://github.com/definitelyavi)
+**Jashandeep Singh** [@definitelyavi](https://github.com/definitelyavi)
 
 ---
 
